@@ -4,7 +4,7 @@ public class DecodeWays_91 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "226";
+		String s = "11106";
 		
 		int[] dq = new int[s.length()+1];
 		dq[0]=1;
