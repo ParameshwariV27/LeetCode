@@ -6,37 +6,41 @@ public class CompareVersionNumbers_165 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String v1 = "1.2";
-		String v2 ="1.10";
+		String v1 = "1.01";
+		String v2 ="1.0001";
 		int res = check(v1, v2);
 		System.out.println(res);
 	}
 		public static int check(String v1, String v2)
 		{
+			int n1 = v1.length();
+			int n2 = v2.length();
 			int i=0,j=0;
-			int n = v1.length();
-			int m = v2.length();
-			while(i<n||j<m)
+			while(i<n1 || j<n2)
 			{
-				int num=0;
-				int num1 =0 ;
-				while(i<n && v1.charAt(i)!='.')
+				//System.out.println(v1.charAt(i));
+			//System.out.println(res);
+				int num1=0;
+				while(i<n1 && v1.charAt(i)!='.')
 				{
-					num = num*10+(v1.charAt(i)-'0');
+					num1 = num1*10+(v1.charAt(i)-'0');
 					i++;
 				}
-				while(j<m && v2.charAt(j)!='.')
+				
+				int num2 = 0;
+				while(j<n2 && v2.charAt(j)!='.')
 				{
-					num1 = num1*10+(v2.charAt(j)-'0');
+					num2 = num2*10+(v2.charAt(j)-'0');
 					j++;
 				}
 				
-			    if(num<num1) return -1;
-			    if(num>num1) return 1;
-			    
-			    i++;j++;
+				if(num1<num2) return -1;
+				if(num1>num2) return 1;
+				
+				i++;j++;
 			}
+			
 			return 0;
-	}
+		}
 
 }
