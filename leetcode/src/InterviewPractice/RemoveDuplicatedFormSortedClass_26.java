@@ -12,10 +12,8 @@ public class RemoveDuplicatedFormSortedClass_26 {
 			{
 				i++;
 				arr[i]=arr[j];
-			}
-				
+			}	
 		}
 		System.out.println("no.of unique elements"+(i+1));
 	}
-
 }

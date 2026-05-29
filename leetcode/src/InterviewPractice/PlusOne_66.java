@@ -1,44 +1,33 @@
 package InterviewPractice;
 
+import java.util.Arrays;
+
 public class PlusOne_66 {
 	public static void main(String args[])
 	{
-		int[] arr = {1,4,9,9};
+		int[] arr = {1,4,9};
 		int[] res= plusOne(arr);
-		for(int i: res)System.out.println(i);
+		System.out.println(Arrays.toString(res));
 	}
     private static  int[] plusOne(int[] digits) {
+    	
+    	for(int i=digits.length-1; i>=0;i--)
+    	{
+    		if(digits[i]==9)
+    		{
+    			digits[i]=0;
+    		}
+    		else
+    		{
+    			digits[i]++;
+    			return digits;
+    		}
+    	}
+    	
+    	digits = new int[digits.length+1];
+    	digits[0]=1;
+    	return digits;
         
-        int len = digits.length;
-        int carry =1;
-        for(int i=len-1;i>=0;i--)
-        {
-            digits[i]+=1;
-            if(digits[i]==10)
-            {
-                digits[i]=0;
-                carry=1;
-            }
-            else
-            {
-                carry=0;
-                break;
-            }
-        }
-        int[] res = new int[len+1];
-        if(carry==1)
-        {
-            res[0]=1;
-            for(int i=1;i<res.length;i++)
-            {
-                res[i]=digits[i-1];
-            }
-            return res;
-        }
-        else
-        {
-            return digits;
-        }
     }
 }
 

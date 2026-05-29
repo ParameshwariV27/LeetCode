@@ -7,8 +7,9 @@ public class RomanNumber_13 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str="I";
+		String str = "IV";
 		int l = str.length();
+		
 		Map<Character, Integer> map = new HashMap<>();
 		map.put('I', 1);
 		map.put('V', 5);
@@ -17,20 +18,22 @@ public class RomanNumber_13 {
 		map.put('C', 100);
 		map.put('D', 500);
 		map.put('M', 1000);
-		int res=0;
+		
+		int ans =0 ;
 		for(int i=0;i<l;i++)
 		{
-			if((i+1)<l &&(map.get(str.charAt(i)) < map.get(str.charAt(i+1))))
+			if((i+1 < l) && (map.get(str.charAt(i))<map.get(str.charAt(i+1))))
 			{
-				res+=(map.get(str.charAt(i+1))-map.get(str.charAt(i)));
+				ans+=map.get(str.charAt(i+1))-map.get(str.charAt(i));
 				i++;
 			}
 			else
 			{
-				res+=map.get(str.charAt(i));
+				ans+=map.get(str.charAt(i));
 			}
 		}
-		System.out.print(res);
+		
+		System.out.println(ans);
 	}
 
 }

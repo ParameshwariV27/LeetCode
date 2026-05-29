@@ -17,7 +17,7 @@ public class BookSort {
 		list.add(new Book("Algorithms", 350));
 		
 		Collections.sort(list, (a,b)->{
-			if(a.getPages().equals(b.getPages()))
+			if(a.getPages().equals(b.getPages()) )
 			{
 				return a.getTitle().compareTo(b.getTitle());
 			}

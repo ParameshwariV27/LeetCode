@@ -9,28 +9,27 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
 		// TODO Auto-generated method stub
 		String s = "pwwkew";
 		int l=0;
-		Set<Character> set = new HashSet<>();
-		int maxl =0;
-		for(int r=0;r<s.length();r++)
+		int max = 0;
+		Set<Character> hs = new HashSet<>();
+		for(int r=0; r<s.length();r++)
 		{
-			if(!set.contains(s.charAt(r)))
+			if(!hs.contains(s.charAt(r)))
 			{
-				set.add(s.charAt(r));
-				maxl = Math.max(maxl, r-l+1);
+				hs.add(s.charAt(r));
+				max = Math.max(max,r-l+1);
 			}
-			else 
+			else
+			{
+				while(hs.contains(s.charAt(r)))
 				{
-				while(set.contains(s.charAt(r)))
-				
-				{
-					set.remove(s.charAt(l));
-				l++;
-				
+					hs.remove(s.charAt(l));
+					l++;
 				}
-				set.add(s.charAt(r));
+				hs.add(s.charAt(r));
+			}
 		}
-		}
-		System.out.print(maxl);
+		
+		System.out.print(max);
 	}
 
 }
